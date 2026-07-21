@@ -157,9 +157,14 @@ export default function Scene() {
             <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] text-center">A DECISÃO É SUA.</h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">Pare de perder mercado por não transparecer a autoridade que você tem.</p>
             
-            <Button href="https://briefing-site-alien.vercel.app/">
-              <span className="text-lg md:text-2xl px-6 py-4 pointer-events-auto">QUERO MEU SITE PROFISSIONAL AGORA</span>
-            </Button>
+            <a 
+              href="https://briefing-site-alien.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl shadow-[0_0_30px_rgba(0,255,136,0.8)] hover:shadow-[0_0_50px_rgba(0,255,136,1)] hover:scale-105 transition-all pointer-events-auto"
+            >
+              QUERO MEU SITE PROFISSIONAL AGORA
+            </a>
           </div>
         </Portal>
 

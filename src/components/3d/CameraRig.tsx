@@ -23,9 +23,9 @@ export default function CameraRig() {
 
     const proxy = { z: 5 };
     
-    // Camera travels from z=5 all the way to z=-850
+    // Camera travels from z=5 all the way to z=-800 (The final portal)
     tl.to(proxy, {
-      z: -850, 
+      z: -800, 
       ease: "none",
       onUpdate: () => {
         if (typeof window !== "undefined") {
