@@ -35,13 +35,13 @@ export default function Portal({ position, children, color = "#ffffff" }: any) {
       }
       
       // THE ULTIMATE CLICK FIX:
-      // 1. Physically remove it from rendering when invisible using display: none
+      // 1. Physically hide it from rendering using visibility: hidden (preserves layout for drei)
       // 2. Enable pointer-events: auto ONLY when fully opaque
       if (opacity < 0.05) {
-        htmlRef.current.style.display = "none";
+        htmlRef.current.style.visibility = "hidden";
         htmlRef.current.style.pointerEvents = "none";
       } else {
-        htmlRef.current.style.display = "flex";
+        htmlRef.current.style.visibility = "visible";
         htmlRef.current.style.pointerEvents = opacity > 0.8 ? "auto" : "none";
       }
     }
@@ -61,7 +61,7 @@ export default function Portal({ position, children, color = "#ffffff" }: any) {
         <div 
           ref={htmlRef} 
           className="portal-content w-[100vw] px-4 md:px-12 flex-col items-center justify-center transition-opacity duration-100"
-          style={{ display: "none", pointerEvents: "none" }}
+          style={{ visibility: "hidden", pointerEvents: "none" }}
         >
           {children}
         </div>
