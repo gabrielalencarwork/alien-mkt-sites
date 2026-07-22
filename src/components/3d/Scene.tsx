@@ -45,7 +45,7 @@ export default function Scene() {
         {/* Portal 0: A Superfície */}
         <section id="portal-ui-0" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> MAS ELA EXISTE NO DIGITAL?</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes High-Ticket todos os dias porque não tem uma sede oficial que comprove sua autoridade.</p>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes todos os dias porque não tem uma sede digital que comprove sua autoridade.</p>
           <p className="text-sm text-[#00ff88] uppercase tracking-widest mt-8 opacity-60 animate-pulse text-center">Continue descendo (Scroll)</p>
         </section>
 
@@ -57,15 +57,15 @@ export default function Scene() {
 
         {/* Portal 2: O Despertar */}
         <section id="portal-ui-2" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">VIVER SÓ DE INSTAGRAM <br/><span className="text-[#333]">É UM RISCO.</span></h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">As redes sociais são terreno alugado. Uma conta bloqueada e seu negócio desaparece da noite para o dia.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">VIVER SÓ DE INSTAGRAM <br/><span className="text-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">É UM RISCO.</span></h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">O Instagram limita o seu alcance e não transmite exclusividade. Clientes dispostos a pagar caro exigem um ambiente de compra altamente profissional e seguro.</p>
           <p className="text-sm text-gray-500 mt-4 text-center">Sem um site próprio, você não tem o controle do seu principal ativo: a atenção do cliente.</p>
         </section>
 
         {/* Portal 3: A Solução */}
         <section id="portal-ui-3" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">TENHA A SUA <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">SEDE DEFINITIVA.</span></h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Muito mais que um cartão de visitas. Nós construímos o seu Quartel-General digital com engenharia pura, focado 100% em converter visitantes em vendas.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">NÓS CRIAMOS <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">EXPERIÊNCIAS.</span></h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Muito mais que um cartão de visitas. Nós construímos experiências digitais com engenharia pura, focado 100% em converter visitantes em vendas.</p>
         </section>
 
         {/* Portal 4: O Arsenal */}
@@ -168,7 +168,7 @@ export default function Scene() {
             </div>
             <div>
               <h4 className="text-xl font-bold text-[#00ff88] mb-2">Qual o prazo de construção?</h4>
-              <p className="text-gray-300 text-lg">Engenharia premium exige de 14 a 30 dias de imersão total da nossa equipe no seu projeto.</p>
+              <p className="text-gray-300 text-lg">Entregamos o seu site no ar em até 72h. Ou, dependendo da complexidade e demanda, pedimos um prazo maior.</p>
             </div>
             <div>
               <h4 className="text-xl font-bold text-[#00ff88] mb-2">Funciona no celular?</h4>
@@ -181,7 +181,7 @@ export default function Scene() {
         <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <div className="flex flex-col items-center justify-center min-h-[50vh]">
             <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] text-center">A DECISÃO É SUA.</h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">Pare de deixar dinheiro na mesa. Dê o próximo passo e garanta o seu território no ambiente mais lucrativo do mundo.</p>
+            <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">A sua oportunidade de dar o próximo passo e garantir o seu território personalizado no ambiente mais lucrativo do mundo.</p>
             
             <a 
               href="https://briefing-site-alien.vercel.app/"
