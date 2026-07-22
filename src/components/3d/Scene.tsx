@@ -44,28 +44,28 @@ export default function Scene() {
         
         {/* Portal 0: A Superfície */}
         <section id="portal-ui-0" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> SEU SITE NÃO.</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes todos os dias porque seu posicionamento digital não reflete a sua autoridade.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> MAS ELA EXISTE NO DIGITAL?</h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes High-Ticket todos os dias porque não tem uma sede oficial que comprove sua autoridade.</p>
           <p className="text-sm text-[#00ff88] uppercase tracking-widest mt-8 opacity-60 animate-pulse text-center">Continue descendo (Scroll)</p>
         </section>
 
         {/* Portal 1: A Realidade Oculta */}
         <section id="portal-ui-1" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">A REALIDADE OCULTA.</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">90% dos seus clientes vão embora antes de ler a primeira frase. O cliente entra, não sente confiança no design, e compra do seu concorrente.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">O BOCA A BOCA NÃO É SUFICIENTE.</h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Clientes exigentes pesquisam antes de comprar. Se eles procuram o seu nome no Google e não encontram nada, eles compram do seu concorrente que está lá.</p>
         </section>
 
         {/* Portal 2: O Despertar */}
         <section id="portal-ui-2" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">A CULPA NÃO É DO SEU PRODUTO.</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">É da estrutura engessada. Templates amadores destruíram a percepção de valor do seu negócio.</p>
-          <p className="text-sm text-gray-500 mt-4 text-center">Sites pré-fabricados são lentos, genéricos e ignoram a psicologia humana de vendas.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">VIVER SÓ DE INSTAGRAM <br/><span className="text-[#333]">É UM RISCO.</span></h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">As redes sociais são terreno alugado. Uma conta bloqueada e seu negócio desaparece da noite para o dia.</p>
+          <p className="text-sm text-gray-500 mt-4 text-center">Sem um site próprio, você não tem o controle do seu principal ativo: a atenção do cliente.</p>
         </section>
 
         {/* Portal 3: A Solução */}
         <section id="portal-ui-3" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">NÓS NÃO FAZEMOS SITES.<br/><span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">NÓS CONSTRUÍMOS MÁQUINAS.</span></h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Engenharia de código puro. Sem plugins desnecessários. Sem lentidão.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">TENHA A SUA <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">SEDE DEFINITIVA.</span></h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Muito mais que um cartão de visitas. Nós construímos o seu Quartel-General digital com engenharia pura, focado 100% em converter visitantes em vendas.</p>
         </section>
 
         {/* Portal 4: O Arsenal */}
@@ -181,7 +181,7 @@ export default function Scene() {
         <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <div className="flex flex-col items-center justify-center min-h-[50vh]">
             <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] text-center">A DECISÃO É SUA.</h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">Pare de perder mercado por não transparecer a autoridade que você tem.</p>
+            <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">Pare de deixar dinheiro na mesa. Dê o próximo passo e garanta o seu território no ambiente mais lucrativo do mundo.</p>
             
             <a 
               href="https://briefing-site-alien.vercel.app/"
@@ -193,6 +193,26 @@ export default function Scene() {
             </a>
           </div>
         </section>
+
+        {/* Scroll Arrow (Avançar) */}
+        <button 
+          id="scroll-arrow"
+          onClick={() => {
+            const viewportHeight = window.innerHeight;
+            const currentScroll = window.scrollY;
+            // Calcula qual é o próximo múltiplo de 100vh para ancorar perfeitamente no próximo portal
+            const nextScroll = Math.floor((currentScroll + 10) / viewportHeight) * viewportHeight + viewportHeight;
+            window.scrollTo({ top: nextScroll, behavior: 'smooth' });
+          }}
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 p-4 flex flex-col items-center justify-center gap-2 pointer-events-auto transition-opacity duration-500 group z-[9999]"
+        >
+          <span className="text-xs text-[#00ff88] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]">Avançar</span>
+          <div className="w-12 h-12 rounded-full border border-white/20 bg-black/50 flex items-center justify-center backdrop-blur-md group-hover:border-[#00ff88]/50 group-hover:bg-[#00ff88]/10 transition-all">
+            <svg className="w-6 h-6 text-[#00ff88] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </button>
 
       </div>
     </div>

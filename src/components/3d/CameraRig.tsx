@@ -79,6 +79,14 @@ export default function CameraRig() {
           }
         }
       }
+      
+      const arrowEl = document.getElementById('scroll-arrow');
+      if (arrowEl) {
+        // Fade out the arrow when reaching the final section
+        const arrowOpacity = state.camera.position.z < -750 ? 0 : 1;
+        arrowEl.style.opacity = arrowOpacity.toString();
+        arrowEl.style.pointerEvents = arrowOpacity > 0.5 ? "auto" : "none";
+      }
     }
   });
 
