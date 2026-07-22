@@ -38,7 +38,9 @@ export default function Portal({ position, color = "#333333", children }: Portal
       }
       
       htmlRef.current.style.opacity = opacity.toString();
-      // Only allow clicks when fully visible to prevent invisible elements blocking the screen
+      // Use visibility to ensure invisible portals never block clicks
+      htmlRef.current.style.visibility = opacity > 0.05 ? "visible" : "hidden";
+      // Ensure the container allows pointer events when active
       htmlRef.current.style.pointerEvents = opacity > 0.8 ? "auto" : "none";
     }
   });

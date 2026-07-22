@@ -8,7 +8,7 @@ import Button from "../ui/Button";
 
 export default function Scene() {
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 bg-[#020205]">
+    <div className="fixed top-0 left-0 w-full h-full bg-[#020205]">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <color attach="background" args={["#020205"]} />
         <Stars radius={100} depth={50} count={3000} factor={3} saturation={0} fade speed={0.5} />
