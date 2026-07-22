@@ -16,7 +16,7 @@ export default function Scene() {
         
         {/* Portal 1: A Superfície (z=0) */}
         <Portal position={[0, 0, 0]} color="#ffffff">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#444]">PREMIUM.</span><br/> SEU SITE NÃO.</h1>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> SEU SITE NÃO.</h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes todos os dias porque seu posicionamento digital não reflete a sua autoridade.</p>
           <p className="text-sm text-[#00ff88] uppercase tracking-widest mt-8 opacity-60 animate-pulse text-center">Continue descendo (Scroll)</p>
         </Portal>
@@ -77,15 +77,18 @@ export default function Scene() {
               { name: "Brincakids Locações", url: "https://brincakidslocacoes.vercel.app/" },
               { name: "Consultório Online", url: "https://consultorioonline.site/" },
               { name: "Garagem 844", url: "https://garagem844-landing-page.vercel.app/" },
-            ].map((site, i) => (
-              <a key={i} href={site.url} target="_blank" rel="noreferrer" className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group">
+            ].map((site, i) => {
+              // Extract hostname for better logo fetching
+              const hostname = site.url.replace('https://', '').replace('http://', '').replace('/', '');
+              return (
+              <a key={i} href={site.url} target="_blank" rel="noreferrer" className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group relative z-[9999]">
                 <div className="flex items-center gap-3">
-                  <img src={`https://www.google.com/s2/favicons?domain=${site.url}&sz=64`} alt={site.name} className="w-8 h-8 rounded-full bg-black/50 p-1" />
-                  <span className="font-bold text-white group-hover:text-white transition-colors">{site.name}</span>
+                  <img src={`https://icon.horse/icon/${hostname}`} alt={site.name} className="w-8 h-8 rounded-full bg-white/10 p-1" />
+                  <span className="font-bold text-white group-hover:text-[#00ff88] transition-colors">{site.name}</span>
                 </div>
                 <span className="text-xs text-[#00ff88] uppercase tracking-widest font-bold drop-shadow-[0_0_5px_rgba(0,255,136,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(0,255,136,0.9)] transition-all">Acessar Site</span>
               </a>
-            ))}
+            )})}
           </div>
         </Portal>
 
