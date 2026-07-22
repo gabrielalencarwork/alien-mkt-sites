@@ -10,7 +10,7 @@ export default function CameraRig() {
     gsap.registerPlugin(ScrollTrigger);
     
     // Animate the body or a global proxy to create scrollable space
-    document.body.style.height = "900vh"; // 9 portals
+    document.body.style.height = "1000vh"; // 10 portals
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -23,9 +23,9 @@ export default function CameraRig() {
 
     const proxy = { z: 5 };
     
-    // Camera travels from z=5 all the way to z=-800 (The final portal)
+    // Camera travels from z=5 all the way to z=-900 (The final portal)
     tl.to(proxy, {
-      z: -800, 
+      z: -900, 
       ease: "none",
       onUpdate: () => {
         if (typeof window !== "undefined") {
@@ -50,7 +50,7 @@ export default function CameraRig() {
 
     // UI Sync Logic: Sync native HTML overlays with the 3D camera
     if (typeof document !== "undefined") {
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i <= 9; i++) {
         const el = document.getElementById(`portal-ui-${i}`);
         if (el) {
           const portalZ = -i * 100;
@@ -83,7 +83,7 @@ export default function CameraRig() {
       const arrowEl = document.getElementById('scroll-arrow');
       if (arrowEl) {
         // Fade out the arrow when reaching the final section
-        const arrowOpacity = state.camera.position.z < -750 ? 0 : 1;
+        const arrowOpacity = state.camera.position.z < -850 ? 0 : 1;
         arrowEl.style.opacity = arrowOpacity.toString();
         arrowEl.style.pointerEvents = arrowOpacity > 0.5 ? "auto" : "none";
       }

@@ -25,16 +25,10 @@ export default function Scene() {
         <Stars radius={100} depth={50} count={3000} factor={3} saturation={0} fade speed={0.5} />
         <ambientLight intensity={0.1} />
         
-        {/* 3D Only Portals */}
-        <Portal position={[0, 0, 0]} color="#ffffff" />
-        <Portal position={[0, 0, -100]} color="#ff3333" />
-        <Portal position={[0, 0, -200]} />
-        <Portal position={[0, 0, -300]} color="#00ff88" />
-        <Portal position={[0, 0, -400]} />
-        <Portal position={[0, 0, -500]} />
-        <Portal position={[0, 0, -600]} />
-        <Portal position={[0, 0, -700]} />
-        <Portal position={[0, 0, -800]} color="#00ff88" />
+        {/* Generates 10 portals spaced by 100 units on the Z axis */}
+        {Array.from({ length: 10 }).map((_, i) => (
+          <Portal key={i} position={[0, 0, -i * 100]} />
+        ))}
 
         <CameraRig />
       </Canvas>
@@ -44,22 +38,22 @@ export default function Scene() {
         
         {/* Portal 0: A Superfície */}
         <section id="portal-ui-0" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> MAS ELA EXISTE NO DIGITAL?</h1>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA EXISTE NO <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">DIGITAL?</span></h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes todos os dias porque não tem uma sede digital que comprove sua autoridade.</p>
           <p className="text-sm text-[#00ff88] uppercase tracking-widest mt-8 opacity-60 animate-pulse text-center">Continue descendo (Scroll)</p>
         </section>
 
         {/* Portal 1: A Realidade Oculta */}
         <section id="portal-ui-1" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">O BOCA A BOCA NÃO É SUFICIENTE.</h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Clientes exigentes pesquisam antes de comprar. Se eles procuram o seu nome no Google e não encontram nada, eles compram do seu concorrente que está lá.</p>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">DEPENDER DE INDICAÇÃO <span className="text-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">NUNCA MAIS.</span></h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Clientes exigentes pesquisam antes de comprar ou contratar. Se eles procuram no Google e não te encontram, eles compram do seu concorrente que está lá.</p>
         </section>
 
         {/* Portal 2: O Despertar */}
         <section id="portal-ui-2" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">VIVER SÓ DE INSTAGRAM <br/><span className="text-red-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">É UM RISCO.</span></h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">O Instagram limita o seu alcance e não transmite exclusividade. Clientes dispostos a pagar caro exigem um ambiente de compra altamente profissional e seguro.</p>
-          <p className="text-sm text-gray-500 mt-4 text-center">Sem um site próprio, você não tem o controle do seu principal ativo: a atenção do cliente.</p>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Clientes que buscam qualidade preferem um ambiente de compra profissional e seguro que transmita confiança.</p>
+          <p className="text-sm text-gray-500 mt-4 text-center">O Instagram é a vitrine, e o seu site é o portal que vai separar quem realmente compra dos curiosos.</p>
         </section>
 
         {/* Portal 3: A Solução */}
@@ -68,8 +62,14 @@ export default function Scene() {
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Muito mais que um cartão de visitas. Nós construímos experiências digitais com engenharia pura, focado 100% em converter visitantes em vendas.</p>
         </section>
 
-        {/* Portal 4: O Arsenal */}
-        <section id="portal-ui-4" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity pt-10">
+        {/* Portal 4: O Exclusivo (New Section) */}
+        <section id="portal-ui-4" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
+          <h1 className="text-3xl md:text-6xl font-black mb-4 tracking-tight text-center">TER UM SITE NÃO É <br className="md:hidden" />PARA TODO MUNDO.</h1>
+          <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Ele é a linha divisória que separa o profissional do amador, feito sob medida para quem realmente busca se destacar e dominar o seu nicho.</p>
+        </section>
+
+        {/* Portal 5: O Arsenal */}
+        <section id="portal-ui-5" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity pt-10">
           <h1 className="text-3xl md:text-6xl font-black mb-6 tracking-tight text-center">A ENGENHARIA DA CONVERSÃO.</h1>
           <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-4xl w-full text-left">
             <div className="p-4 md:p-6 border border-white/10 bg-white/5 rounded-xl">
@@ -91,8 +91,8 @@ export default function Scene() {
           </div>
         </section>
 
-        {/* Portal 5: A Prova (Portfólio) */}
-        <section id="portal-ui-5" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2 md:px-4 opacity-0 transition-opacity pt-6">
+        {/* Portal 6: A Prova (Portfólio) */}
+        <section id="portal-ui-6" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2 md:px-4 opacity-0 transition-opacity pt-6">
           <h1 className="text-3xl md:text-5xl font-black mb-4 md:mb-8 tracking-tight text-center">PROVAS REAIS. CLIENTES REAIS.</h1>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 text-center max-w-4xl w-full mx-auto">
             {portfolioSites.map((site, i) => {
@@ -115,8 +115,8 @@ export default function Scene() {
           </div>
         </section>
 
-        {/* Portal 6: A Lógica (Planos) */}
-        <section id="portal-ui-6" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-0 md:px-4 opacity-0 transition-opacity">
+        {/* Portal 7: A Lógica (Planos) */}
+        <section id="portal-ui-7" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-0 md:px-4 opacity-0 transition-opacity">
           <h1 className="text-3xl md:text-5xl font-black mb-4 md:mb-8 tracking-tight text-center px-4">VISÃO GERAL: COMPARE OS PLANOS</h1>
           
           <style dangerouslySetInnerHTML={{__html: `
@@ -167,8 +167,8 @@ export default function Scene() {
           <p className="text-[10px] text-gray-500 mt-2 lg:hidden uppercase tracking-widest animate-pulse font-bold">Deslize para ver mais planos &rarr;</p>
         </section>
 
-        {/* Portal 7: FAQ */}
-        <section id="portal-ui-7" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
+        {/* Portal 8: FAQ */}
+        <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-3xl md:text-6xl font-black mb-8 md:mb-12 tracking-tight text-center">CLAREZA ABSOLUTA.</h1>
           <div className="space-y-6 md:space-y-8 max-w-3xl w-full text-left">
             <div>
@@ -186,8 +186,8 @@ export default function Scene() {
           </div>
         </section>
 
-        {/* Portal 8: Fechamento */}
-        <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
+        {/* Portal 9: Fechamento */}
+        <section id="portal-ui-9" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           
           <style dangerouslySetInnerHTML={{__html: `
             @keyframes smoothPulse {
