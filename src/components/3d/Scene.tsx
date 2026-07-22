@@ -64,7 +64,7 @@ export default function Scene() {
 
         {/* Portal 3: A Solução */}
         <section id="portal-ui-3" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">NÓS CRIAMOS <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">EXPERIÊNCIAS.</span></h1>
+          <h1 className="text-3xl md:text-6xl font-black mb-4 tracking-tight text-center">NÓS NÃO CRIAMOS SITES,<br className="hidden md:block"/> CRIAMOS <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">EXPERIÊNCIAS VIRTUAIS.</span></h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Muito mais que um cartão de visitas. Nós construímos experiências digitais com engenharia pura, focado 100% em converter visitantes em vendas.</p>
         </section>
 
@@ -188,6 +188,17 @@ export default function Scene() {
 
         {/* Portal 8: Fechamento */}
         <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes smoothPulse {
+              0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0,255,136,0.6); }
+              50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0,255,136,1); }
+            }
+            .btn-pulse {
+              animation: smoothPulse 2.5s infinite ease-in-out;
+            }
+          `}} />
+
           <div className="flex flex-col items-center justify-center min-h-[50vh]">
             <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] text-center">A DECISÃO É SUA.</h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">A sua oportunidade de dar o próximo passo e garantir o seu território personalizado no ambiente mais lucrativo do mundo.</p>
@@ -196,9 +207,9 @@ export default function Scene() {
               href="https://briefing-site-alien.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl shadow-[0_0_30px_rgba(0,255,136,0.8)] hover:shadow-[0_0_50px_rgba(0,255,136,1)] hover:scale-105 transition-transform pointer-events-auto"
+              className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl btn-pulse text-center pointer-events-auto leading-tight"
             >
-              QUERO MEU SITE PROFISSIONAL AGORA
+              QUERO MEU SITE<br className="md:hidden" /> PROFISSIONAL AGORA
             </a>
           </div>
         </section>
