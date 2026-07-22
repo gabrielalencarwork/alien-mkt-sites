@@ -50,8 +50,8 @@ export default function Portal({ position, color = "#333333", children }: Portal
         <meshBasicMaterial color={color} transparent opacity={0.6} />
       </mesh>
       
-      <Html center zIndexRange={[100, 0]}>
-        <div ref={htmlRef} className="portal-content w-[100vw] px-4 md:px-12 flex flex-col items-center justify-center transition-opacity duration-100">
+      <Html center zIndexRange={[100, 0]} wrapperClass="pointer-events-auto">
+        <div ref={htmlRef} className="portal-content w-[100vw] px-4 md:px-12 flex flex-col items-center justify-center transition-opacity duration-100 pointer-events-auto">
           {children}
         </div>
       </Html>
