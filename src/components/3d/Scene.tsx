@@ -69,32 +69,32 @@ export default function Scene() {
         </section>
 
         {/* Portal 4: O Arsenal */}
-        <section id="portal-ui-4" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tight text-center">O QUE EXISTE POR BAIXO DO CAPÔ?</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full text-left">
-            <div className="p-6 border border-white/10 bg-white/5 rounded-xl">
-              <h3 className="text-xl font-bold text-[#00ff88] mb-2">Neuromarketing</h3>
-              <p className="text-gray-400">Design guiado pelo subconsciente para reter a atenção do usuário e direcioná-lo à compra.</p>
+        <section id="portal-ui-4" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity pt-10">
+          <h1 className="text-3xl md:text-6xl font-black mb-6 tracking-tight text-center">A ENGENHARIA DA CONVERSÃO.</h1>
+          <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-4xl w-full text-left">
+            <div className="p-4 md:p-6 border border-white/10 bg-white/5 rounded-xl">
+              <h3 className="text-sm md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Neuromarketing</h3>
+              <p className="text-gray-400 text-xs md:text-base leading-snug">Design guiado pelo subconsciente para reter a atenção do usuário.</p>
             </div>
-            <div className="p-6 border border-white/10 bg-white/5 rounded-xl">
-              <h3 className="text-xl font-bold text-[#00ff88] mb-2">Velocidade Extrema</h3>
-              <p className="text-gray-400">Desenvolvimento com as tecnologias modernas usadas por grandes empresas. Carregamento em milissegundos.</p>
+            <div className="p-4 md:p-6 border border-white/10 bg-white/5 rounded-xl">
+              <h3 className="text-sm md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Alta Velocidade</h3>
+              <p className="text-gray-400 text-xs md:text-base leading-snug">Tecnologia moderna para carregamento em milissegundos.</p>
             </div>
-            <div className="p-6 border border-white/10 bg-white/5 rounded-xl">
-              <h3 className="text-xl font-bold text-[#00ff88] mb-2">Copywriting</h3>
-              <p className="text-gray-400">Textos milimetricamente desenhados para quebrar objeções e elevar o desejo pelo seu produto.</p>
+            <div className="p-4 md:p-6 border border-white/10 bg-white/5 rounded-xl">
+              <h3 className="text-sm md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Copywriting</h3>
+              <p className="text-gray-400 text-xs md:text-base leading-snug">Textos milimetricamente desenhados para quebrar objeções e vender.</p>
             </div>
-            <div className="p-6 border border-white/10 bg-white/5 rounded-xl">
-              <h3 className="text-xl font-bold text-[#00ff88] mb-2">SEO Técnico</h3>
-              <p className="text-gray-400">Seu site no radar do Google. Estruturação perfeita para ser encontrado por clientes orgânicos.</p>
+            <div className="p-4 md:p-6 border border-white/10 bg-white/5 rounded-xl">
+              <h3 className="text-sm md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">SEO Técnico</h3>
+              <p className="text-gray-400 text-xs md:text-base leading-snug">Seu site estruturado para ser encontrado pelo Google.</p>
             </div>
           </div>
         </section>
 
         {/* Portal 5: A Prova (Portfólio) */}
-        <section id="portal-ui-5" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-5xl font-black mb-8 tracking-tight text-center">RESULTADOS QUE NÃO PEDEM DESCULPAS.</h1>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center max-w-4xl w-full mx-auto">
+        <section id="portal-ui-5" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2 md:px-4 opacity-0 transition-opacity pt-6">
+          <h1 className="text-3xl md:text-5xl font-black mb-4 md:mb-8 tracking-tight text-center">PROVAS REAIS. CLIENTES REAIS.</h1>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 text-center max-w-4xl w-full mx-auto">
             {portfolioSites.map((site, i) => {
               const hostname = site.url.replace('https://', '').replace('http://', '').replace('/', '');
               return (
@@ -103,27 +103,35 @@ export default function Scene() {
                 href={site.url} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group"
+                className="p-2 md:p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-2 md:gap-3 pointer-events-auto group"
               >
-                <div className="flex items-center gap-3">
-                  <img src={`https://icon.horse/icon/${hostname}`} alt={site.name} className="w-8 h-8 rounded-full bg-white/10 p-1" />
-                  <span className="font-bold text-white group-hover:text-[#00ff88] transition-colors">{site.name}</span>
+                <div className="flex items-center gap-2">
+                  <img src={`https://icon.horse/icon/${hostname}`} alt={site.name} className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-white/10 p-0.5 md:p-1" />
+                  <span className="font-bold text-white group-hover:text-[#00ff88] transition-colors text-xs md:text-base">{site.name}</span>
                 </div>
-                <span className="text-xs text-[#00ff88] uppercase tracking-widest font-bold drop-shadow-[0_0_5px_rgba(0,255,136,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(0,255,136,0.9)] transition-all">Acessar Site</span>
+                <span className="text-[9px] md:text-xs text-[#00ff88] uppercase tracking-widest font-bold drop-shadow-[0_0_5px_rgba(0,255,136,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(0,255,136,0.9)] transition-all">Acessar</span>
               </a>
             )})}
           </div>
         </section>
 
         {/* Portal 6: A Lógica (Planos) */}
-        <section id="portal-ui-6" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-center">VISÃO GERAL: COMPARE OS PLANOS</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl w-full text-left">
-            <div className="p-6 md:p-8 border border-white/10 bg-white/5 rounded-2xl flex flex-col">
-              <h3 className="text-2xl font-bold mb-2">01. Essencial</h3>
-              <p className="text-sm text-gray-400 mb-4 flex-grow">O seu consultório digital. Um cartão de visitas online impecável e ultra-rápido.</p>
-              <div className="text-xl font-bold text-[#00ff88] mb-4">R$708 <span className="text-sm text-gray-400 font-normal">à vista ou 12x R$59</span></div>
-              <ul className="text-sm space-y-2 text-gray-300">
+        <section id="portal-ui-6" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-0 md:px-4 opacity-0 transition-opacity">
+          <h1 className="text-3xl md:text-5xl font-black mb-4 md:mb-8 tracking-tight text-center px-4">VISÃO GERAL: COMPARE OS PLANOS</h1>
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            .hide-scrollbar::-webkit-scrollbar { display: none; }
+            .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+          `}} />
+
+          {/* Container com scroll horizontal em mobile e grid em desktop */}
+          <div className="flex lg:grid lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl w-full text-left overflow-x-auto lg:overflow-visible snap-x snap-mandatory px-6 pb-8 pt-4 hide-scrollbar">
+            
+            <div className="min-w-[85vw] md:min-w-[350px] lg:min-w-0 snap-center p-6 border border-white/10 bg-white/5 rounded-2xl flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">01. Essencial</h3>
+              <p className="text-xs md:text-sm text-gray-400 mb-4 flex-grow">O seu consultório digital. Um cartão de visitas online impecável e ultra-rápido.</p>
+              <div className="text-lg md:text-xl font-bold text-[#00ff88] mb-4">R$708 <span className="text-xs md:text-sm text-gray-400 font-normal">à vista ou 12x R$59</span></div>
+              <ul className="text-xs md:text-sm space-y-2 text-gray-300">
                 <li>✓ Site de 1 página (rápido)</li>
                 <li>✓ Hospedagem + Domínio (1 ano)</li>
                 <li>✓ Botão de agendamento WhatsApp</li>
@@ -131,12 +139,12 @@ export default function Scene() {
               </ul>
             </div>
             
-            <div className="p-6 md:p-8 border border-[#00ff88]/50 bg-[#00ff88]/10 rounded-2xl flex flex-col relative scale-100 lg:scale-105 shadow-[0_0_30px_rgba(0,255,136,0.1)]">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00ff88] text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Mais Escolhido</div>
-              <h3 className="text-2xl font-bold mb-2 text-white">02. Que Converte</h3>
-              <p className="text-sm text-gray-300 mb-4 flex-grow">Autoridade e posicionamento. Destaque-se na região e converta visitantes em pacientes.</p>
-              <div className="text-xl font-bold text-[#00ff88] mb-4">R$1.497 <span className="text-sm text-gray-400 font-normal">à vista ou 12x R$147</span></div>
-              <ul className="text-sm space-y-2 text-gray-200">
+            <div className="min-w-[85vw] md:min-w-[350px] lg:min-w-0 snap-center p-6 border border-[#00ff88]/50 bg-[#00ff88]/10 rounded-2xl flex flex-col relative lg:scale-105 shadow-[0_0_30px_rgba(0,255,136,0.1)]">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00ff88] text-black text-[10px] md:text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Mais Escolhido</div>
+              <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">02. Que Converte</h3>
+              <p className="text-xs md:text-sm text-gray-300 mb-4 flex-grow">Autoridade e posicionamento. Destaque-se na região e converta visitantes em pacientes.</p>
+              <div className="text-lg md:text-xl font-bold text-[#00ff88] mb-4">R$1.497 <span className="text-xs md:text-sm text-gray-400 font-normal">à vista ou 12x R$147</span></div>
+              <ul className="text-xs md:text-sm space-y-2 text-gray-200">
                 <li>✓ Site completo (múltiplas seções)</li>
                 <li>✓ Textos estratégicos (Copy)</li>
                 <li>✓ Otimização Google Meu Negócio</li>
@@ -144,11 +152,11 @@ export default function Scene() {
               </ul>
             </div>
 
-            <div className="p-6 md:p-8 border border-white/10 bg-white/5 rounded-2xl flex flex-col">
-              <h3 className="text-2xl font-bold mb-2">03. Alien Completo</h3>
-              <p className="text-sm text-gray-400 mb-4 flex-grow">Escala e agenda cheia. A solução definitiva de captação ativa de pacientes.</p>
-              <div className="text-xl font-bold text-[#00ff88] mb-4">R$2.500 <span className="text-sm text-gray-400 font-normal">à vista ou 12x R$208</span></div>
-              <ul className="text-sm space-y-2 text-gray-300">
+            <div className="min-w-[85vw] md:min-w-[350px] lg:min-w-0 snap-center p-6 border border-white/10 bg-white/5 rounded-2xl flex flex-col">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">03. Alien Completo</h3>
+              <p className="text-xs md:text-sm text-gray-400 mb-4 flex-grow">Escala e agenda cheia. A solução definitiva de captação ativa de pacientes.</p>
+              <div className="text-lg md:text-xl font-bold text-[#00ff88] mb-4">R$2.500 <span className="text-xs md:text-sm text-gray-400 font-normal">à vista ou 12x R$208</span></div>
+              <ul className="text-xs md:text-sm space-y-2 text-gray-300">
                 <li>✓ Toda a estrutura do Plano 02</li>
                 <li>✓ 2 meses de gestão de tráfego</li>
                 <li>✓ Anúncios Google/Meta segmentados</li>
@@ -156,23 +164,24 @@ export default function Scene() {
               </ul>
             </div>
           </div>
+          <p className="text-[10px] text-gray-500 mt-2 lg:hidden uppercase tracking-widest animate-pulse font-bold">Deslize para ver mais planos &rarr;</p>
         </section>
 
         {/* Portal 7: FAQ */}
         <section id="portal-ui-7" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
-          <h1 className="text-4xl md:text-6xl font-black mb-12 tracking-tight text-center">CLAREZA ABSOLUTA.</h1>
-          <div className="space-y-8 max-w-3xl w-full text-left">
+          <h1 className="text-3xl md:text-6xl font-black mb-8 md:mb-12 tracking-tight text-center">CLAREZA ABSOLUTA.</h1>
+          <div className="space-y-6 md:space-y-8 max-w-3xl w-full text-left">
             <div>
-              <h4 className="text-xl font-bold text-[#00ff88] mb-2">Como vou editar meu conteúdo?</h4>
-              <p className="text-gray-300 text-lg">Entregamos a tecnologia limpa acoplada a um painel sob medida para alterações simples.</p>
+              <h4 className="text-lg md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Como vou editar meu conteúdo?</h4>
+              <p className="text-gray-300 text-sm md:text-lg">Entregamos a tecnologia limpa acoplada a um painel sob medida para alterações simples.</p>
             </div>
             <div>
-              <h4 className="text-xl font-bold text-[#00ff88] mb-2">Qual o prazo de construção?</h4>
-              <p className="text-gray-300 text-lg">Entregamos o seu site no ar em até 72h. Ou, dependendo da complexidade e demanda, pedimos um prazo maior.</p>
+              <h4 className="text-lg md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Qual o prazo de construção?</h4>
+              <p className="text-gray-300 text-sm md:text-lg">Entregamos o seu site no ar em até 72h. Ou, dependendo da complexidade e demanda, pedimos um prazo maior.</p>
             </div>
             <div>
-              <h4 className="text-xl font-bold text-[#00ff88] mb-2">Funciona no celular?</h4>
-              <p className="text-gray-300 text-lg">Nosso design é pensado 100% Mobile-First, afinal, é onde 80% das suas compras acontecem.</p>
+              <h4 className="text-lg md:text-xl font-bold text-[#00ff88] mb-1 md:mb-2">Funciona no celular?</h4>
+              <p className="text-gray-300 text-sm md:text-lg">Nosso design é pensado 100% Mobile-First, afinal, é onde 80% das suas compras acontecem.</p>
             </div>
           </div>
         </section>
