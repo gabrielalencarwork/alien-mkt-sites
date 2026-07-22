@@ -2,16 +2,14 @@
 
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
 import * as THREE from "three";
 
-export default function Portal({ position, children, color = "#ffffff" }: any) {
+export default function Portal({ position, color = "#ffffff" }: any) {
   const group = useRef<THREE.Group>(null);
-  const htmlRef = useRef<HTMLDivElement>(null);
   const materialRef = useRef<THREE.MeshBasicMaterial>(null);
 
   useFrame((state) => {
-    if (group.current && htmlRef.current) {
+    if (group.current && materialRef.current) {
       const camera = state.camera;
       const distance = camera.position.z - group.current.position.z;
       
@@ -27,45 +25,18 @@ export default function Portal({ position, children, color = "#ffffff" }: any) {
         }
       }
       
-      htmlRef.current.style.opacity = opacity.toString();
-      
-      // Update the 3D ring opacity to be very subtle (max 15%) and fade with the text
-      if (materialRef.current) {
-        materialRef.current.opacity = opacity * 0.15;
-      }
-      
-      // THE ULTIMATE CLICK FIX:
-      // 1. Physically hide it from rendering using visibility: hidden (preserves layout for drei)
-      // 2. Enable pointer-events: auto ONLY when fully opaque
-      if (opacity < 0.05) {
-        htmlRef.current.style.visibility = "hidden";
-        htmlRef.current.style.pointerEvents = "none";
-      } else {
-        htmlRef.current.style.visibility = "visible";
-        htmlRef.current.style.pointerEvents = opacity > 0.8 ? "auto" : "none";
-      }
+      // Update the 3D ring opacity to be very subtle (max 15%)
+      materialRef.current.opacity = opacity * 0.15;
     }
   });
 
   return (
     <group ref={group} position={position}>
-      {/* 3D Portal Ring */}
+      {/* 3D Portal Ring Only */}
       <mesh position={[0, 0, 0]}>
         <ringGeometry args={[10, 10.5, 64]} />
-        <meshBasicMaterial ref={materialRef} color={color} transparent opacity={0.15} />
+        <meshBasicMaterial ref={materialRef} color={color} transparent opacity={0} />
       </mesh>
-      
-      {/* HTML Overlay */}
-      {/* pointerEvents: "none" on Html wrapper ensures Drei doesn't block the screen */}
-      <Html center style={{ pointerEvents: "none" }}>
-        <div 
-          ref={htmlRef} 
-          className="portal-content w-[100vw] px-4 md:px-12 flex-col items-center justify-center transition-opacity duration-100"
-          style={{ visibility: "hidden", pointerEvents: "none" }}
-        >
-          {children}
-        </div>
-      </Html>
     </group>
   );
 }

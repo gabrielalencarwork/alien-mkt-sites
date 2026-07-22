@@ -4,7 +4,18 @@ import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import CameraRig from "./CameraRig";
 import Portal from "./Portal";
-import Button from "../ui/Button";
+
+const portfolioSites = [
+  { name: "Fabricio Silva", url: "https://fabriciosilvapsi.com.br/" },
+  { name: "Nubia Experience", url: "https://www.nubiaexperience.com/" },
+  { name: "Dra Maíza Torres", url: "https://dramaizatorres.com.br/" },
+  { name: "Vitalix Telemedicina", url: "https://vitalixtelemedicina.com.br/" },
+  { name: "Barbara Luiza", url: "https://barbaraluizapsi.vercel.app/" },
+  { name: "Clínica Positive", url: "https://clinicapositive.alienmkt.com.br/" },
+  { name: "Brincakids Locações", url: "https://brincakidslocacoes.vercel.app/" },
+  { name: "Consultório Online", url: "https://consultorioonline.site/" },
+  { name: "Garagem 844", url: "https://garagem844-landing-page.vercel.app/" },
+];
 
 export default function Scene() {
   return (
@@ -14,34 +25,51 @@ export default function Scene() {
         <Stars radius={100} depth={50} count={3000} factor={3} saturation={0} fade speed={0.5} />
         <ambientLight intensity={0.1} />
         
-        {/* Portal 1: A Superfície (z=0) */}
-        <Portal position={[0, 0, 0]} color="#ffffff">
+        {/* 3D Only Portals */}
+        <Portal position={[0, 0, 0]} color="#ffffff" />
+        <Portal position={[0, 0, -100]} color="#ff3333" />
+        <Portal position={[0, 0, -200]} />
+        <Portal position={[0, 0, -300]} color="#00ff88" />
+        <Portal position={[0, 0, -400]} />
+        <Portal position={[0, 0, -500]} />
+        <Portal position={[0, 0, -600]} />
+        <Portal position={[0, 0, -700]} />
+        <Portal position={[0, 0, -800]} color="#00ff88" />
+
+        <CameraRig />
+      </Canvas>
+
+      {/* 2D HTML UI LAYER - COMPLETELY DECOUPLED FROM 3D FOR FLAWLESS MOBILE CLICKS & SCROLLING */}
+      <div id="ui-layer" className="absolute top-0 left-0 w-full h-full pointer-events-none z-50">
+        
+        {/* Portal 0: A Superfície */}
+        <section id="portal-ui-0" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">SUA EMPRESA É <span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">PREMIUM.</span><br/> SEU SITE NÃO.</h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Você entrega um serviço de excelência, mas perde clientes todos os dias porque seu posicionamento digital não reflete a sua autoridade.</p>
           <p className="text-sm text-[#00ff88] uppercase tracking-widest mt-8 opacity-60 animate-pulse text-center">Continue descendo (Scroll)</p>
-        </Portal>
+        </section>
 
-        {/* Portal 2: A Realidade Oculta (z=-100) */}
-        <Portal position={[0, 0, -100]} color="#ff3333">
+        {/* Portal 1: A Realidade Oculta */}
+        <section id="portal-ui-1" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">A REALIDADE OCULTA.</h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">90% dos seus clientes vão embora antes de ler a primeira frase. O cliente entra, não sente confiança no design, e compra do seu concorrente.</p>
-        </Portal>
+        </section>
 
-        {/* Portal 3: O Despertar (z=-200) */}
-        <Portal position={[0, 0, -200]}>
+        {/* Portal 2: O Despertar */}
+        <section id="portal-ui-2" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">A CULPA NÃO É DO SEU PRODUTO.</h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">É da estrutura engessada. Templates amadores destruíram a percepção de valor do seu negócio.</p>
           <p className="text-sm text-gray-500 mt-4 text-center">Sites pré-fabricados são lentos, genéricos e ignoram a psicologia humana de vendas.</p>
-        </Portal>
+        </section>
 
-        {/* Portal 4: A Solução (z=-300) */}
-        <Portal position={[0, 0, -300]} color="#00ff88">
+        {/* Portal 3: A Solução */}
+        <section id="portal-ui-3" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight text-center">NÓS NÃO FAZEMOS SITES.<br/><span className="text-[#00ff88] drop-shadow-[0_0_15px_rgba(0,255,136,0.5)]">NÓS CONSTRUÍMOS MÁQUINAS.</span></h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-2 max-w-4xl text-center">Engenharia de código puro. Sem plugins desnecessários. Sem lentidão.</p>
-        </Portal>
+        </section>
 
-        {/* Portal 5: O Arsenal (z=-400) */}
-        <Portal position={[0, 0, -400]}>
+        {/* Portal 4: O Arsenal */}
+        <section id="portal-ui-4" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-8 tracking-tight text-center">O QUE EXISTE POR BAIXO DO CAPÔ?</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full text-left">
             <div className="p-6 border border-white/10 bg-white/5 rounded-xl">
@@ -61,24 +89,13 @@ export default function Scene() {
               <p className="text-gray-400">Seu site no radar do Google. Estruturação perfeita para ser encontrado por clientes orgânicos.</p>
             </div>
           </div>
-        </Portal>
+        </section>
 
-        {/* Portal 6: A Prova (z=-500) */}
-        <Portal position={[0, 0, -500]}>
+        {/* Portal 5: A Prova (Portfólio) */}
+        <section id="portal-ui-5" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-5xl font-black mb-8 tracking-tight text-center">RESULTADOS QUE NÃO PEDEM DESCULPAS.</h1>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center max-w-4xl w-full mx-auto">
-            {[
-              { name: "Fabricio Silva", url: "https://fabriciosilvapsi.com.br/" },
-              { name: "Nubia Experience", url: "https://www.nubiaexperience.com/" },
-              { name: "Dra Maíza Torres", url: "https://dramaizatorres.com.br/" },
-              { name: "Vitalix Telemedicina", url: "https://vitalixtelemedicina.com.br/" },
-              { name: "Barbara Luiza", url: "https://barbaraluizapsi.vercel.app/" },
-              { name: "Clínica Positive", url: "https://clinicapositive.alienmkt.com.br/" },
-              { name: "Brincakids Locações", url: "https://brincakidslocacoes.vercel.app/" },
-              { name: "Consultório Online", url: "https://consultorioonline.site/" },
-              { name: "Garagem 844", url: "https://garagem844-landing-page.vercel.app/" },
-            ].map((site, i) => {
-              // Extract hostname for better logo fetching
+            {portfolioSites.map((site, i) => {
               const hostname = site.url.replace('https://', '').replace('http://', '').replace('/', '');
               return (
               <a 
@@ -86,11 +103,7 @@ export default function Scene() {
                 href={site.url} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group relative z-[9999]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open(site.url, '_blank');
-                }}
+                className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group"
               >
                 <div className="flex items-center gap-3">
                   <img src={`https://icon.horse/icon/${hostname}`} alt={site.name} className="w-8 h-8 rounded-full bg-white/10 p-1" />
@@ -100,10 +113,10 @@ export default function Scene() {
               </a>
             )})}
           </div>
-        </Portal>
+        </section>
 
-        {/* Portal 7: A Lógica (Planos) (z=-600) */}
-        <Portal position={[0, 0, -600]}>
+        {/* Portal 6: A Lógica (Planos) */}
+        <section id="portal-ui-6" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-3xl md:text-5xl font-black mb-8 tracking-tight text-center">VISÃO GERAL: COMPARE OS PLANOS</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl w-full text-left">
             <div className="p-6 md:p-8 border border-white/10 bg-white/5 rounded-2xl flex flex-col">
@@ -143,10 +156,10 @@ export default function Scene() {
               </ul>
             </div>
           </div>
-        </Portal>
+        </section>
 
-        {/* Portal 8: FAQ (z=-700) */}
-        <Portal position={[0, 0, -700]}>
+        {/* Portal 7: FAQ */}
+        <section id="portal-ui-7" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <h1 className="text-4xl md:text-6xl font-black mb-12 tracking-tight text-center">CLAREZA ABSOLUTA.</h1>
           <div className="space-y-8 max-w-3xl w-full text-left">
             <div>
@@ -162,10 +175,10 @@ export default function Scene() {
               <p className="text-gray-300 text-lg">Nosso design é pensado 100% Mobile-First, afinal, é onde 80% das suas compras acontecem.</p>
             </div>
           </div>
-        </Portal>
+        </section>
 
-        {/* Portal 9: Fechamento (z=-800) */}
-        <Portal position={[0, 0, -800]} color="#00ff88">
+        {/* Portal 8: Fechamento */}
+        <section id="portal-ui-8" className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-4 opacity-0 transition-opacity">
           <div className="flex flex-col items-center justify-center min-h-[50vh]">
             <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] text-center">A DECISÃO É SUA.</h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 text-center max-w-2xl">Pare de perder mercado por não transparecer a autoridade que você tem.</p>
@@ -174,19 +187,14 @@ export default function Scene() {
               href="https://briefing-site-alien.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl shadow-[0_0_30px_rgba(0,255,136,0.8)] hover:shadow-[0_0_50px_rgba(0,255,136,1)] hover:scale-105 transition-all pointer-events-auto"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("https://briefing-site-alien.vercel.app/", '_blank');
-              }}
+              className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl shadow-[0_0_30px_rgba(0,255,136,0.8)] hover:shadow-[0_0_50px_rgba(0,255,136,1)] hover:scale-105 transition-transform pointer-events-auto"
             >
               QUERO MEU SITE PROFISSIONAL AGORA
             </a>
           </div>
-        </Portal>
+        </section>
 
-        <CameraRig />
-      </Canvas>
+      </div>
     </div>
   );
 }

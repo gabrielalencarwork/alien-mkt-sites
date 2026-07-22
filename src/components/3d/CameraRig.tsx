@@ -47,6 +47,39 @@ export default function CameraRig() {
       
     // Smooth interpolation
     state.camera.position.z += (targetZ - state.camera.position.z) * 0.1;
+
+    // UI Sync Logic: Sync native HTML overlays with the 3D camera
+    if (typeof document !== "undefined") {
+      for (let i = 0; i < 9; i++) {
+        const el = document.getElementById(`portal-ui-${i}`);
+        if (el) {
+          const portalZ = -i * 100;
+          const distance = state.camera.position.z - portalZ;
+          
+          let opacity = 0;
+          if (distance > -50 && distance < 50) {
+            if (distance > 20) {
+              opacity = 1 - (distance - 20) / 30;
+            } else if (distance >= -20) {
+              opacity = 1;
+            } else {
+              opacity = 1 - (-20 - distance) / 30;
+            }
+          }
+          
+          el.style.opacity = opacity.toString();
+          
+          if (opacity < 0.05) {
+            el.style.visibility = "hidden";
+            el.style.pointerEvents = "none";
+          } else {
+            el.style.visibility = "visible";
+            // Allow clicking only when the section is highly visible
+            el.style.pointerEvents = opacity > 0.8 ? "auto" : "none";
+          }
+        }
+      }
+    }
   });
 
   return null;
