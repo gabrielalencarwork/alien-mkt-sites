@@ -8,6 +8,7 @@ import * as THREE from "three";
 export default function Portal({ position, children, color = "#ffffff" }: any) {
   const group = useRef<THREE.Group>(null);
   const htmlRef = useRef<HTMLDivElement>(null);
+  const materialRef = useRef<THREE.MeshBasicMaterial>(null);
 
   useFrame((state) => {
     if (group.current && htmlRef.current) {
@@ -28,6 +29,11 @@ export default function Portal({ position, children, color = "#ffffff" }: any) {
       
       htmlRef.current.style.opacity = opacity.toString();
       
+      // Update the 3D ring opacity to be very subtle (max 15%) and fade with the text
+      if (materialRef.current) {
+        materialRef.current.opacity = opacity * 0.15;
+      }
+      
       // THE ULTIMATE CLICK FIX:
       // 1. Physically remove it from rendering when invisible using display: none
       // 2. Enable pointer-events: auto ONLY when fully opaque
@@ -46,7 +52,7 @@ export default function Portal({ position, children, color = "#ffffff" }: any) {
       {/* 3D Portal Ring */}
       <mesh position={[0, 0, 0]}>
         <ringGeometry args={[10, 10.5, 64]} />
-        <meshBasicMaterial color={color} transparent opacity={0.6} />
+        <meshBasicMaterial ref={materialRef} color={color} transparent opacity={0.15} />
       </mesh>
       
       {/* HTML Overlay */}
