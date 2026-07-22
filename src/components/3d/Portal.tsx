@@ -5,27 +5,16 @@ import { useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
 
-interface PortalProps {
-  position: [number, number, number];
-  color?: string;
-  children: React.ReactNode;
-}
-
-export default function Portal({ position, color = "#333333", children }: PortalProps) {
-  const meshRef = useRef<THREE.Mesh>(null);
+export default function Portal({ position, children, color = "#ffffff" }: any) {
+  const group = useRef<THREE.Group>(null);
   const htmlRef = useRef<HTMLDivElement>(null);
 
   useFrame((state) => {
-    if (!meshRef.current) return;
-    
-    // Slow rotation of the torus ring
-    meshRef.current.rotation.z -= 0.002;
-    
-    // Calculate distance from camera to fade in/out the HTML content
-    const distance = state.camera.position.z - position[2];
-    
-    if (htmlRef.current) {
-      // Fade in from 50 to 20, stay solid from 20 to -20, fade out from -20 to -50
+    if (group.current && htmlRef.current) {
+      const camera = state.camera;
+      const distance = camera.position.z - group.current.position.z;
+      
+      // Calculate opacity based on distance
       let opacity = 0;
       if (distance > -50 && distance < 50) {
         if (distance > 20) {
@@ -38,20 +27,36 @@ export default function Portal({ position, color = "#333333", children }: Portal
       }
       
       htmlRef.current.style.opacity = opacity.toString();
-      // Use visibility to ensure invisible portals never block clicks
-      htmlRef.current.style.visibility = opacity > 0.05 ? "visible" : "hidden";
+      
+      // THE ULTIMATE CLICK FIX:
+      // 1. Physically remove it from rendering when invisible using display: none
+      // 2. Enable pointer-events: auto ONLY when fully opaque
+      if (opacity < 0.05) {
+        htmlRef.current.style.display = "none";
+        htmlRef.current.style.pointerEvents = "none";
+      } else {
+        htmlRef.current.style.display = "flex";
+        htmlRef.current.style.pointerEvents = opacity > 0.8 ? "auto" : "none";
+      }
     }
   });
 
   return (
-    <group position={position}>
-      <mesh ref={meshRef}>
-        <torusGeometry args={[8, 0.03, 16, 100]} />
+    <group ref={group} position={position}>
+      {/* 3D Portal Ring */}
+      <mesh position={[0, 0, 0]}>
+        <ringGeometry args={[10, 10.5, 64]} />
         <meshBasicMaterial color={color} transparent opacity={0.6} />
       </mesh>
       
-      <Html center zIndexRange={[100, 0]} wrapperClass="pointer-events-auto">
-        <div ref={htmlRef} className="portal-content w-[100vw] px-4 md:px-12 flex flex-col items-center justify-center transition-opacity duration-100 pointer-events-auto">
+      {/* HTML Overlay */}
+      {/* pointerEvents: "none" on Html wrapper ensures Drei doesn't block the screen */}
+      <Html center style={{ pointerEvents: "none" }}>
+        <div 
+          ref={htmlRef} 
+          className="portal-content w-[100vw] px-4 md:px-12 flex-col items-center justify-center transition-opacity duration-100"
+          style={{ display: "none", pointerEvents: "none" }}
+        >
           {children}
         </div>
       </Html>

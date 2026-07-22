@@ -81,7 +81,17 @@ export default function Scene() {
               // Extract hostname for better logo fetching
               const hostname = site.url.replace('https://', '').replace('http://', '').replace('/', '');
               return (
-              <a key={i} href={site.url} target="_blank" rel="noreferrer" className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group relative z-[9999]">
+              <a 
+                key={i} 
+                href={site.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="p-4 border border-white/10 hover:border-[#00ff88] hover:bg-[#00ff88]/5 transition-all bg-white/5 rounded-xl flex flex-col items-center justify-center gap-3 pointer-events-auto group relative z-[9999]"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(site.url, '_blank');
+                }}
+              >
                 <div className="flex items-center gap-3">
                   <img src={`https://icon.horse/icon/${hostname}`} alt={site.name} className="w-8 h-8 rounded-full bg-white/10 p-1" />
                   <span className="font-bold text-white group-hover:text-[#00ff88] transition-colors">{site.name}</span>
@@ -165,6 +175,10 @@ export default function Scene() {
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#00ff88] text-black font-black text-xl md:text-3xl rounded-xl shadow-[0_0_30px_rgba(0,255,136,0.8)] hover:shadow-[0_0_50px_rgba(0,255,136,1)] hover:scale-105 transition-all pointer-events-auto"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://briefing-site-alien.vercel.app/", '_blank');
+              }}
             >
               QUERO MEU SITE PROFISSIONAL AGORA
             </a>
